@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{%block title %}
+    <title>Login to your account</title>
+{%endblock%}
+
+{%block content%}
+    {% if request.user.is_authenticated%}
+    <h3>You're already LoggedIn </h3>
+    <h4>LogOut here</h4>
+    <a href="{% url 'logout'%}"><button class=" btn btn-secondary border-dark"> Logout </button>
+    <a href="{% url 'home'%}"><button class=" btn btn-secondary border-dark"> Home </button>
+    
+    
+    {%else%}
+    <form method="post" class="border border-secondary rounded text-light bg-dark " style=" width: fit-content; margin: auto; padding: 20px;"> {% csrf_token%}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-secondary"/>
+    </form>
+    {%endif%}
+{%endblock%}

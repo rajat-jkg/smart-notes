@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block title%}
+    <title>{{note.title}}</title>
+{%endblock%}
+
+{%block content%}
+    <div class="border border-secondary rounded text-light bg-dark mx-3 my-2 px-3 py-2">
+    <h3>{{note.title}}</h3>
+    <pre>{{note.text}}</pre>
+    </div>
+    <a href="/notes/update/{{note.pk}}"><button class="btn btn-md btn-dark mx-3" type="button">Edit Note</button></a>
+    <a href="/notes/delete/{{note.pk}}"><button class="btn btn-md btn-dark" type="button">Delete Note</button></a>
+
+{%endblock%}

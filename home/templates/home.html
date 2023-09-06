@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+
+{%block title %}
+<title>Home</title>
+{%endblock%}
+
+{%block content %}
+    <h2>Welcome {%if request.user.first_name%} {{request.user.first_name}} {%else%} {{request.user.username}} {%endif%}</h2>
+    <p>
+       <strong>Django Notes</strong> is a simple and elegant portal where you can store your notes in text form. Whether you want to jot down some ideas, keep track of your tasks, or organize your thoughts, Smart Notes can help you do it. Smart Notes is built with django, a powerful and versatile web framework that lets you create dynamic and interactive web applications. Ready to get started? Sign up now and start taking notes with Django Notes!
+    </p>
+    {% if request.user.is_authenticated%}
+        <a href="{% url 'allNotes'%}"><button class="btn btn-md btn-dark" type="button">Browse Notes</button></a>
+        <a href="{% url 'addNote'%}"><button class="btn btn-md btn-dark" type="button">Add a note</button></a>
+    {%else%}
+    <a href="{% url 'login'%}"><button class="btn btn-md btn-dark" type="button">Login</button></a>
+    <a href="{% url 'signup'%}"><button class="btn btn-md btn-dark" type="button">Signup</button></a>
+    {%endif%}
+{%endblock%}

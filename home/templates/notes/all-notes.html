@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block title %}
+    <title>All notes</title>
+{%endblock%}
+
+{%block content%}
+
+<div class="container-fluid">
+    <div class="row">
+        {%for note in notes%}
+        <div class="col-md-4">
+            <a href="/notes/{{note.pk}}">
+            <div class="border border-secondary rounded text-light bg-dark mx-3 my-2 px-3 py-2">
+            <h3>{{note.title}}</h3>
+            <p>{{note.text|truncatechars:20}}</p>
+            </div>
+            </a>
+
+        </div>
+        {%endfor%}
+    </div>
+
+</div>
+
+{%endblock%}

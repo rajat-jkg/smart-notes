@@ -1,0 +1,8 @@
+form p label{
+    display: block;
+    text-align: left;
+}
+form p input{
+    display: block;
+    width: 100%;
+}

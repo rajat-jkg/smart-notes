@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block title %}
+    <title>Add Note</title>
+{%endblock%}
+
+{%block content%}
+    <form method="post" class="border border-secondary rounded text-light bg-dark " style=" width: fit-content; margin: auto; padding: 20px; text-align: left;"> {% csrf_token%}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-secondary"/>
+        <a class="btn btn-danger" href="{%url 'allNotes'%}">Cancel</a>
+    </form>
+    
+{%endblock%}
