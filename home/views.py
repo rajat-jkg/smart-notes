@@ -6,8 +6,9 @@ from django.shortcuts import render
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Notes
-from .forms import NotesFrom
+from .forms import NotesFrom, MailerForm
 from django.contrib.auth.decorators import login_required
+from .emails import mailTo
 # Create your views here.
 
 
@@ -61,3 +62,26 @@ class deleteNote(LoginRequiredMixin,DeleteView):
     model= Notes
     success_url = '/allnotes'
     login_url = '/account/login'
+
+
+def sendMail(request, pk):
+    note = Notes.objects.get(pk = pk)
+    title = note.title
+    text = note.text
+    if request.method=='POST':
+        filled_form = MailerForm(request.POST)
+        if filled_form.is_valid():
+            toEmail = filled_form.cleaned_data['email']
+            if mailTo(toEmail,title,text):
+                return redirect('/mail-success')
+            else:
+                return redirect('/mail-failed')
+    else:
+        form = MailerForm
+        return render(request, 'mails/sendmail.html',{'title': title, 'text':text, 'form': form})
+    
+def mailsuccess(request):
+    return render(request, 'mails/success.html',{})
+
+def mailfailure(request):
+    return render(request, 'mails/failure.html',{})

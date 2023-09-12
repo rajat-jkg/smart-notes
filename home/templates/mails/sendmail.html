@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+
+{%block title%}
+<title>Email Yourself</title>
+{%endblock%}
+
+{%block content%}
+    <form method="post" class="border border-secondary rounded text-light bg-dark " style=" width: fit-content; margin: auto; padding: 20px; text-align: left;"> {% csrf_token%}
+        <h3>You are Emailing Yourself the note with title '{{title}}'</h3>
+        {{form.as_p}}
+        <input type="submit" class="btn btn-secondary"/>
+    </form>
+
+{%endblock%}

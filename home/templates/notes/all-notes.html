@@ -16,9 +16,12 @@
             <p>{{note.text|truncatechars:20}}</p>
             </div>
             </a>
-
+            {% empty %}
+            <h3>You haven't added any note yet.</h3>
+        <a href="{% url 'addNote'%}"><button class="btn btn-md btn-dark" type="button">Add a note</button></a>
         </div>
         {%endfor%}
+        
     </div>
 
 </div>

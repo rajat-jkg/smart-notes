@@ -6,9 +6,9 @@ urlpatterns = [
    path('allnotes', views.NotesList.as_view() , name='allNotes'),
    path('notes/<int:pk>', views.note, name = 'single.note'),
    path('notes/update/<int:pk>', views.updateNote.as_view(), name = 'update.note'),
-   path('notes/delete/<int:pk>', views.deleteNote.as_view(), name = 'delete.note')
-
-
-
+   path('notes/delete/<int:pk>', views.deleteNote.as_view(), name = 'delete.note'),
+   path('notes/<int:pk>/email', views.sendMail, name = 'note.mail'),
+   path('mail-success', views.mailsuccess, name = 'mail.success'),
+   path('mail-failed', views.mailfailure, name = 'mail.failure'),
 
 ]

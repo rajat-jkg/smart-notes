@@ -6,3 +6,9 @@ form p input{
     display: block;
     width: 100%;
 }
+ul.errorlist{
+    background-color: red;
+    border-radius: 5px;
+    padding: 4px 8px;
+    list-style: none;
+}
