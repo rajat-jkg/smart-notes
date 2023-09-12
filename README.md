@@ -6,24 +6,44 @@ A simple Django application that allows users to create and manage notes. It has
 
 1. Download the code
 
-2. Create a virtual environment and activate.
+2. Create an outlook email account.
+
+3. In the file /home/mails.py , replace line 10 with the following code:
+
+```
+server = smtplib.SMTP('smtp-mail.outlook.com',587)
+```
+
+Line 14:
+
+```
+server.login('youremail@outlook.com', 'your_password')
+```
+
+Line 17:
+
+```
+message['From'] = 'Your Name <youremail@outlook.com>'
+```
+
+4. Create a virtual environment and activate.
 
 ```
 $ python -m virtualenv environment_name
 $ environment_name/Scripts/activate
 ```
 
-3. Install Django.
+5. Install Django.
 ```
 $ pip install django
 ```
 
-4. Go to the project's root directory and run manage.py file with command runserver
+6. Go to the project's root directory and run manage.py file with command runserver
 
 ```
 $ python manage.py runserver
 ```
 
-5. This will run a server on localhost at the address displayed on the sehll/cmd.
+7. This will run a server on localhost at the address displayed on the sehll/cmd.
 
-6. Go to the browser and paste that address to run the application.
+8. Go to the browser and paste that address to run the application.
