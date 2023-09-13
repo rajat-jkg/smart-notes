@@ -48,4 +48,4 @@ $ python manage.py runserver
 
 8. Go to the browser and paste that address to run the application.
 
-[Web link] (https://smart-notes.rajat-jkg.repl.co/)
+[Web link](https://smart-notes.rajat-jkg.repl.co/)
