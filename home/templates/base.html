@@ -3,10 +3,42 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <style>
+      section{
+        min-height: 85vh;
+      }
+      form{
+        max-width: 100%;
+      }
+      form input{
+        background-color: rgb(238, 236, 232);
+        color: black;
+        width: 100%;
+      }
+      form textarea{
+        background-color: rgb(238, 233, 226);
+        color: black;
+        width: 100%;
+      }
+      form p label{
+          display: block;
+          width: 100%;
+          text-align: left;
+      }
+      form p input{
+          display: block;
+          width: 100%;
+      }
+      ul.errorlist{
+          background-color: red;
+          border-radius: 5px;
+          padding: 4px 8px;
+          list-style: none;
+      }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {%block title %}
     {%endblock%}
-    <link rel="stylesheet" href="{% static 'style.css'%}">
     <link rel="shortcut icon"  href="{% static 'favicon.ico' %}" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
@@ -54,5 +86,8 @@
     {%endblock%}
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <footer class="bg-dark text-light py-4 px-2" style="text-align: center;">
+      Developed by <a href="https://rajatgupta.me" style="color: white;">Rajat Gupta</a>
+    </footer>
   </body>
 </html>
