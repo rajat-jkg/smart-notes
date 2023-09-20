@@ -2,6 +2,9 @@
 
 A simple Django application that allows users to create and manage notes. It has a LogIn portal built with django's default user management system. A user can add notes in the app and when you browse the notes you will be able to see the notes you have created.
 
+## Web Link
+[Click Here](https://smart-notes.rajat-jkg.repl.co/)
+
 ## Installation 
 
 1. Download the code
