@@ -11,10 +11,10 @@ def mailTo(toEmail, title,text):
         print('SMTP server started')
         server.starttls()
         print('tls connections started')
-        server.login('emailer@rajatgupta.me', os.environ['MAILPASS'])
+        server.login('emailer@rajat-gupta.in', os.environ['MAILPASS'])
         print('login successful')
         message = MIMEMultipart('alternative')
-        message['From'] = 'Smart Notes <emailer@rajatgupta.me>'
+        message['From'] = 'Smart Notes <emailer@rajat-gupta.in>'
         message['Subject'] = title
         message['To'] = toEmail
         message['Cc'] = None
@@ -35,7 +35,7 @@ def mailTo(toEmail, title,text):
         message.attach(meassageObject)
         print('message attached')
 
-        server.sendmail(from_addr='emailer@rajatgupta.me', to_addrs=toEmail,msg=message.as_string())
+        server.sendmail(from_addr='emailer@rajat-gupta.in', to_addrs=toEmail,msg=message.as_string())
         print('message sent')
         
         server.close()
